@@ -1,49 +1,55 @@
-Sandbox = {
-    description = "Yet another scope mod"
+local STS = {
+    description = "Yet Another Scope Mod",
+    configs = dofile("configs.lua")
 }
 
-
-local YASM = {}
-
-
-function YASM.init()
+function STS.init()
     registerForEvent("onInit", function()
-        DBG.Alala()
-    end)
-    return {
-        dbg = DBG
-    }
-end
+        --local scopes = dofile("scopes.lua")
+        
 
-function YASM.Alala()
-    print("Sandbox says: Alala!")
-    local scopes = dofile("scopes.lua")
+        local scopes = STS.configs.load()
 
-    for kind, indexes in pairs(scopes) do
-        for index, stats in pairs(indexes) do
-            for stat, value in pairs(stats) do
-                SetScopeStat(kind, index, stat, value)
+        STS.settings = GetMod("nativeSettings")
+        STS.settings.addTab("/STS", "Scopes that Scope")
+
+        for kind, indexes in pairs(scopes) do
+            STS.settings.addSubcategory("/STS/" .. kind, ucfirst(kind))
+            for index, stats in pairs(indexes) do
+                --path, label, desc, min, max, step, currentValue, defaultValue, callback
+                STS.settings.addRangeFloat(
+                    "/STS/" .. kind, -- path
+                    ucfirst(stats['name']), --label
+                    "Zoom Level", --description
+                    0, --min
+                    12, --max
+                    0.25, --step
+                    "%.2f", -- format
+                    stats['ZoomLevel']['custom'] + 0.0, --currentValue
+                    stats['ZoomLevel']['default'] + 0.0, --defaultValue
+                    function(value) --callback
+                        SetScopeStat(kind,index,value)
+                        scopes[kind][index]['ZoomLevel']['custom'] = value
+                        STS.configs.save(scopes)
+                    end)
             end
         end
     end
-
-    print("wololo")
+    )
+    return {
+        STS = STS
+    }
 end
 
-function SetScopeStat(scopeKind, scopeIndex, stat, value)
+function ucfirst(string)
+    return string:sub(1, 1):upper() .. string:sub(2)
+end
+
+function SetScopeStat(scopeKind, scopeIndex, value)
     local path = "Items.w_att_scope_" .. scopeKind .. "_" .. scopeIndex .. "_inline0"
-    TweakDB:SetFlatNoUpdate(path .. ".statType", "BaseStats." .. stat)
+    TweakDB:SetFlatNoUpdate(path .. ".statType", "BaseStats.ZoomLevel")
     TweakDB:SetFlatNoUpdate(path .. ".value", value)
     TweakDB:Update(path)
 end
 
-return YASM.init()
-
--- print(Dump(GetMod("Sandbox"), false))
--- print(Dump(TweakDB:GetRecord("Items.w_att_scope_short_04")))
--- Items.w_att_scope_short_04_inline0
-
--- TweakDB:SetFlatNoUpdate("Items.w_att_scope_short_04_inline0.modifierType = Additive")
--- TweakDB:SetFlatNoUpdate("Items.w_att_scope_short_04_inline0.statType = BaseStats.ZoomLevel")
--- TweakDB:SetFlatNoUpdate("Items.w_att_scope_short_04_inline0.value = 5")
--- TweakDB:Update("Items.w_att_scope_short_04_inline0")
+return STS.init()
