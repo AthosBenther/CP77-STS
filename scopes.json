@@ -14,15 +14,16 @@
       },
       "04": { "name": "SO-21 Saika", "ZoomLevel": { "default": 0, "custom": 0 } },
       "04_legendary": {
-        "name": "SO-21 Saika",
+        "name": "Legendary SO-21 Saika",
         "ZoomLevel": { "default": 0, "custom": 0 }
       },
       "05": { "name": "Jue", "ZoomLevel": { "default": 5, "custom": 5 } },
       "05_legendary": {
-        "name": "Jue",
+        "name": "Legendary Jue",
         "ZoomLevel": { "default": 5, "custom": 5 }
       },
-      "06": { "name": "Long 06", "ZoomLevel": { "default": 5, "custom": 5 } }
+      "06": { "name": "Kairo SA-1", "ZoomLevel": { "default": 0, "custom": 0 }
+    }
     },
     "sniper": {
       "01": {
@@ -42,7 +43,7 @@
         "ZoomLevel": { "default": 4, "custom": 4 }
       },
       "03_legendary": {
-        "name": "Gaki",
+        "name": "Legendary Gaki",
         "ZoomLevel": { "default": 4, "custom": 4 }
       }
     },
@@ -70,8 +71,12 @@
         "ZoomLevel": { "default": 2.5, "custom": 2.5 }
       },
       "07": {
-        "name": "Short 07",
-        "ZoomLevel": { "default": 2.5, "custom": 2.5 }
+        "name": "Kanetsugu",
+        "ZoomLevel": { "default": 0, "custom": 0 }
+      },
+      "07_legendary": {
+        "name": "Legendary Kanetsugu",
+        "ZoomLevel": { "default": 0, "custom": 0 }
       }
     }
   }
