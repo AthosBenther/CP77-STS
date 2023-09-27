@@ -5,33 +5,32 @@ local STS = {
 
 function STS.init()
     registerForEvent("onInit", function()
-        --local scopes = dofile("scopes.lua")
-        
-
         local scopes = STS.configs.load()
 
-        STS.settings = GetMod("nativeSettings")
-        STS.settings.addTab("/STS", "Scopes that Scope")
+        -- STS.settings = GetMod("nativeSettings")
+        -- STS.settings.addTab("/STS", "Scopes that Scope")
 
         for kind, indexes in pairs(scopes) do
-            STS.settings.addSubcategory("/STS/" .. kind, ucfirst(kind))
+            -- STS.settings.addSubcategory("/STS/" .. kind, ucfirst(kind))
             for index, stats in pairs(indexes) do
-                --path, label, desc, min, max, step, currentValue, defaultValue, callback
-                STS.settings.addRangeFloat(
-                    "/STS/" .. kind, -- path
-                    ucfirst(stats['name']), --label
-                    "Zoom Level", --description
-                    0, --min
-                    12, --max
-                    0.25, --step
-                    "%.2f", -- format
-                    stats['ZoomLevel']['custom'] + 0.0, --currentValue
-                    stats['ZoomLevel']['default'] + 0.0, --defaultValue
-                    function(value) --callback
-                        SetScopeStat(kind,index,value)
-                        scopes[kind][index]['ZoomLevel']['custom'] = value
-                        STS.configs.save(scopes)
-                    end)
+                -- STS.settings.addRangeFloat(
+                --     "/STS/" .. kind,                     -- path
+                --     ucfirst(stats['name']),              --label
+                --     "Zoom Level",                        --description
+                --     0,                                   --min
+                --     12,                                  --max
+                --     0.25,                                --step
+                --     "%.2f",                              -- format
+                --     stats['ZoomLevel']['custom'] + 0.0,  --currentValue
+                --     stats['ZoomLevel']['default'] + 0.0, --defaultValue
+                --     function(value)                      --callback
+                --         SetScopeStat(kind, index, value)
+                --         scopes[kind][index]['ZoomLevel']['custom'] = value
+                --         STS.configs.save(scopes)
+                --     end)
+
+                SetScopeStat(kind, index, stats['ZoomLevel']['custom'])
+                scopes[kind][index]['ZoomLevel']['custom'] = stats['ZoomLevel']['custom']
             end
         end
     end
