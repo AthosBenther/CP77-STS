@@ -1,13 +1,10 @@
 local STS = {
-    description = "Yet Another Scope Mod",
+    description = "Scopes that Scope",
     configs = dofile("configs.lua")
 }
 
 function STS.init()
     registerForEvent("onInit", function()
-        --local scopes = dofile("scopes.lua")
-        
-
         local scopes = STS.configs.load()
 
         STS.settings = GetMod("nativeSettings")
@@ -18,20 +15,22 @@ function STS.init()
             for index, stats in pairs(indexes) do
                 --path, label, desc, min, max, step, currentValue, defaultValue, callback
                 STS.settings.addRangeFloat(
-                    "/STS/" .. kind, -- path
-                    ucfirst(stats['name']), --label
-                    "Zoom Level", --description
-                    0, --min
-                    12, --max
-                    0.25, --step
-                    "%.2f", -- format
-                    stats['ZoomLevel']['custom'] + 0.0, --currentValue
+                    "/STS/" .. kind,                     --path
+                    ucfirst(stats['name']),              --label
+                    "Zoom Level",                        --description
+                    0,                                   --min
+                    12,                                  --max
+                    0.25,                                --step
+                    "%.2f",                              --format
+                    stats['ZoomLevel']['custom'] + 0.0,  --currentValue
                     stats['ZoomLevel']['default'] + 0.0, --defaultValue
-                    function(value) --callback
-                        SetScopeStat(kind,index,value)
+                    function(value)                      --callback
+                        SetScopeStat(kind, index, value)
                         scopes[kind][index]['ZoomLevel']['custom'] = value
                         STS.configs.save(scopes)
-                    end)
+                    end
+                )
+                SetScopeStat(kind, index, stats['ZoomLevel']['custom'] + 0.0)
             end
         end
     end
@@ -50,6 +49,7 @@ function SetScopeStat(scopeKind, scopeIndex, value)
     TweakDB:SetFlatNoUpdate(path .. ".statType", "BaseStats.ZoomLevel")
     TweakDB:SetFlatNoUpdate(path .. ".value", value)
     TweakDB:Update(path)
+    --print("STS: " .. scopeKind .. " " .. scopeIndex .. " set to " .. value)
 end
 
 return STS.init()
