@@ -1,83 +1,118 @@
 {
-    "long": {
-      "01": {
-        "name": "Mk.2x Grandstand",
-        "ZoomLevel": { "default": 2, "custom": 2.0 }
-      },
-      "02": {
-        "name": "E255 Percipient",
-        "ZoomLevel": { "default": 3.5, "custom": 3.5 }
-      },
-      "03": {
-        "name": "MK. 8 ClearVue",
-        "ZoomLevel": { "default": 1.5, "custom": 1.5 }
-      },
-      "04": { "name": "SO-21 Saika", "ZoomLevel": { "default": 0, "custom": 0 } },
-      "04_legendary": {
-        "name": "Legendary SO-21 Saika",
-        "ZoomLevel": { "default": 0, "custom": 0 }
-      },
-      "05": { "name": "Jue", "ZoomLevel": { "default": 5, "custom": 5 } },
-      "05_legendary": {
-        "name": "Legendary Jue",
-        "ZoomLevel": { "default": 5, "custom": 5 }
-      },
-      "06": { "name": "Kairo SA-1", "ZoomLevel": { "default": 0, "custom": 0 }
+  "long": {
+    "03": {
+      "ZoomLevel": { "default": 1.5, "custom": 1.5 },
+      "name": "MK. 8 ClearVue",
+      "RangeBonus": { "default": 0, "custom": 0 }
+    },
+    "02": {
+      "ZoomLevel": { "default": 3.5, "custom": 3.5 },
+      "name": "E255 Percipient",
+      "RangeBonus": { "default": 0, "custom": 0 }
+    },
+    "01": {
+      "ZoomLevel": { "default": 2, "custom": 2 },
+      "name": "Mk.2x Grandstand",
+      "RangeBonus": { "default": 0, "custom": 0 }
+    },
+    "05_legendary": {
+      "ZoomLevel": { "default": 5, "custom": 5 },
+      "name": "Legendary Jue",
+      "RangeBonus": { "default": 0, "custom": 0 }
+    },
+    "04_legendary": {
+      "ZoomLevel": { "default": 0, "custom": 0 },
+      "name": "Legendary SO-21 Saika",
+      "RangeBonus": { "default": 0, "custom": 0 }
+    },
+    "04": {
+      "ZoomLevel": { "default": 0, "custom": 0 },
+      "name": "SO-21 Saika",
+      "RangeBonus": { "default": 0, "custom": 0 }
+    },
+    "05": {
+      "ZoomLevel": { "default": 5, "custom": 5 },
+      "name": "Jue",
+      "RangeBonus": { "default": 0, "custom": 0 }
+    },
+    "06": {
+      "ZoomLevel": { "default": 0, "custom": 0 },
+      "name": "Kairo SA-1",
+      "RangeBonus": { "default": 0, "custom": 0 }
     }
+  },
+  "short": {
+    "03": {
+      "ZoomLevel": { "default": 0, "custom": 0 },
+      "name": "Add-Vantage",
+      "RangeBonus": { "default": 0, "custom": 0 }
     },
-    "sniper": {
-      "01": {
-        "name": "HPO Mk.77 Kanone MAX",
-        "ZoomLevel": { "default": 6, "custom": 6 }
-      },
-      "01_legendary": {
-        "name": "Legendary HPO Mk.77 Kanone MAX",
-        "ZoomLevel": { "default": 6, "custom": 6 }
-      },
-      "02": {
-        "name": "E305 Prospecta",
-        "ZoomLevel": { "default": 8, "custom": 8 }
-      },
-      "03": {
-        "name": "Gaki",
-        "ZoomLevel": { "default": 4, "custom": 4 }
-      },
-      "03_legendary": {
-        "name": "Legendary Gaki",
-        "ZoomLevel": { "default": 4, "custom": 4 }
-      }
+    "04": {
+      "ZoomLevel": { "default": 0, "custom": 0 },
+      "name": "CQO Mk.72 Kanone MINI",
+      "RangeBonus": { "default": 0, "custom": 0 }
     },
-    "short": {
-      "01": {
-        "name": "OS-1 GimletEye",
-        "ZoomLevel": { "default": 0, "custom": 0 }
-      },
-      "02": { "name": "Hyakume", "ZoomLevel": { "default": 3, "custom": 3 } },
-      "03": {
-        "name": "Add-Vantage",
-        "ZoomLevel": { "default": 0, "custom": 0 }
-      },
-      "04": {
-        "name": "CQO Mk.72 Kanone MINI",
-        "ZoomLevel": { "default": 0, "custom": 0 }
-      },
-      "05": { "name": "Type 2067", "ZoomLevel": { "default": 0, "custom": 0 } },
-      "06": {
-        "name": "Handyman",
-        "ZoomLevel": { "default": 2.5, "custom": 2.5 }
-      },
-      "06_legendary": {
-        "name": "Legendary Handyman",
-        "ZoomLevel": { "default": 2.5, "custom": 2.5 }
-      },
-      "07": {
-        "name": "Kanetsugu",
-        "ZoomLevel": { "default": 0, "custom": 0 }
-      },
-      "07_legendary": {
-        "name": "Legendary Kanetsugu",
-        "ZoomLevel": { "default": 0, "custom": 0 }
-      }
+    "06": {
+      "ZoomLevel": { "default": 2.5, "custom": 2.5 },
+      "name": "Handyman",
+      "RangeBonus": { "default": 0, "custom": 0 }
+    },
+    "02": {
+      "ZoomLevel": { "default": 3, "custom": 3 },
+      "name": "Hyakume",
+      "RangeBonus": { "default": 0, "custom": 0 }
+    },
+    "07": {
+      "ZoomLevel": { "default": 0, "custom": 0 },
+      "name": "Kanetsugu",
+      "RangeBonus": { "default": 0, "custom": 0 }
+    },
+    "01": {
+      "ZoomLevel": { "default": 0, "custom": 0 },
+      "name": "OS-1 GimletEye",
+      "RangeBonus": { "default": 0, "custom": 0 }
+    },
+    "07_legendary": {
+      "ZoomLevel": { "default": 0, "custom": 0 },
+      "name": "Legendary Kanetsugu",
+      "RangeBonus": { "default": 0, "custom": 0 }
+    },
+    "05": {
+      "ZoomLevel": { "default": 0, "custom": 0 },
+      "name": "Type 2067",
+      "RangeBonus": { "default": 0, "custom": 0 }
+    },
+    "06_legendary": {
+      "ZoomLevel": { "default": 2.5, "custom": 2.5 },
+      "name": "Legendary Handyman",
+      "RangeBonus": { "default": 0, "custom": 0 }
+    }
+  },
+  "sniper": {
+    "03_legendary": {
+      "ZoomLevel": { "default": 4, "custom": 4 },
+      "name": "Legendary Gaki",
+      "RangeBonus": { "default": 0, "custom": 0 }
+    },
+    "02": {
+      "ZoomLevel": { "default": 8, "custom": 8 },
+      "name": "E305 Prospecta",
+      "RangeBonus": { "default": 0, "custom": 0 }
+    },
+    "01_legendary": {
+      "ZoomLevel": { "default": 6, "custom": 6 },
+      "name": "Legendary HPO Mk.77 Kanone MAX",
+      "RangeBonus": { "default": 0, "custom": 0 }
+    },
+    "01": {
+      "ZoomLevel": { "default": 6, "custom": 6 },
+      "name": "HPO Mk.77 Kanone MAX",
+      "RangeBonus": { "default": 0, "custom": 0 }
+    },
+    "03": {
+      "ZoomLevel": { "default": 4, "custom": 4 },
+      "name": "Gaki",
+      "RangeBonus": { "default": 0, "custom": 0 }
     }
   }
-  
+}

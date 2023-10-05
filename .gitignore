@@ -1,4 +1,5 @@
 db.sqlite3
 *.code-workspace
 *.log
-.vscode/settings.json
+.vscode
+ScopesThatScope/*
