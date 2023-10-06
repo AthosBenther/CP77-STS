@@ -3,3 +3,5 @@ db.sqlite3
 *.log
 .vscode
 ScopesThatScope/*
+ScopesThatScope.zip
+ScopesThatScope2.zip

@@ -5,5 +5,5 @@ copy configs.lua ScopesThatScope\bin\x64\plugins\cyber_engine_tweaks\mods\Scopes
 copy init.lua ScopesThatScope\bin\x64\plugins\cyber_engine_tweaks\mods\ScopesThatScope
 copy json.lua ScopesThatScope\bin\x64\plugins\cyber_engine_tweaks\mods\ScopesThatScope
 copy scopes.json ScopesThatScope\bin\x64\plugins\cyber_engine_tweaks\mods\ScopesThatScope
-tar -c -f ScopesThatScope.zip ScopesThatScope
-rmdir ScopesThatScope -Recurse -Force
+@REM tar -c -f ScopesThatScope.zip ScopesThatScope
+@REM rmdir ScopesThatScope -Recurse -Force

@@ -7,45 +7,8 @@ function STS.init()
     registerForEvent("onInit", function()
         local scopes = STS.configs.load()
 
-        STS.settings = GetMod("nativeSettings")
-        STS.settings.addTab("/STS", "Scopes that Scope")
-
         for scopeKind, scopeIndexes in pairs(scopes) do
             for scopeIndex, stats in pairs(scopeIndexes) do
-                STS.settings.addSubcategory("/STS/" .. stats['name'], ucfirst(scopeKind) .. ": " .. ucfirst(stats['name']))
-                --path, label, desc, min, max, step, currentValue, defaultValue, callback
-                STS.settings.addRangeFloat(
-                    "/STS/" .. stats['name'],            --path
-                    "Zoom Level",                        --label
-                    "Zoom Level",                        --description
-                    0,                                   --min
-                    12,                                  --max
-                    0.25,                                --step
-                    "%.2f",                              --format
-                    stats['ZoomLevel']['custom'] + 0.0,  --currentValue
-                    stats['ZoomLevel']['default'] + 0.0, --defaultValue
-                    function(value)                      --callback
-                        SetScopeZoom(scopeKind, scopeIndex, value)
-                        scopes[scopeKind][scopeIndex]['ZoomLevel']['custom'] = value
-                        STS.configs.save(scopes)
-                    end
-                )
-                STS.settings.addRangeFloat(
-                    "/STS/" .. stats['name'],             --path
-                    "Range",                              --label
-                    "Range",                              --description
-                    0,                                    --min
-                    200,                                  --max
-                    1,                                    --step
-                    "%.0f",                                --format
-                    stats['RangeBonus']['custom'] + 0.0,  --currentValue
-                    stats['RangeBonus']['default'] + 0.0, --defaultValue
-                    function(value)                       --callback
-                        SetScopeRange(scopeKind, scopeIndex, value)
-                        scopes[scopeKind][scopeIndex]['RangeBonus']['custom'] = value
-                        STS.configs.save(scopes)
-                    end
-                )
                 SetScopeZoom(scopeKind, scopeIndex, stats['ZoomLevel']['custom'] + 0.0)
                 SetScopeRange(scopeKind, scopeIndex, stats['RangeBonus']['custom'] + 0.0)
             end
