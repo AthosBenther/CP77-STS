@@ -2,6 +2,6 @@ db.sqlite3
 *.code-workspace
 *.log
 .vscode
-ScopesThatScope/*
-ScopesThatScope.zip
-ScopesThatScope2.zip
+/ScopesThatScope
+/ScopesThatScope-CET-Only
+*.zip
